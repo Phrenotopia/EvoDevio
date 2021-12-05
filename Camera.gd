@@ -1,10 +1,10 @@
 extends Camera2D
 
 func _input(event):
-	if Input.is_action_pressed("camera_zoom_in") and zoom > Vector2(0.25,0.25):
-		zoom -= Vector2(0.25,0.25)
-	elif Input.is_action_pressed("camera_zoom_out") and zoom < Vector2(4,4):
-		zoom += Vector2(0.25,0.25)
+	if Input.is_action_pressed("camera_zoom_in"): #and zoom > Vector2(0.25,0.25):
+		zoom -= Vector2(0.25,0.25) * zoom.x
+	elif Input.is_action_pressed("camera_zoom_out"): #and zoom < Vector2(4,4):
+		zoom += Vector2(0.25,0.25) * zoom.x
 
 
 func _process(delta):

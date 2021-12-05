@@ -1,7 +1,7 @@
 extends Node2D
 
 var noise
-var map_size = Vector2(1920, 1080) #Vector2(119, 65) For 32x32 tiles
+const MAPSIZE = Vector2(480, 270) #Vector2(119, 65) For 32x32 tiles
 
 
 func _ready():
@@ -15,8 +15,8 @@ func _ready():
 
 
 func make_map():
-	for x in map_size.x:
-		for y in map_size.y:
+	for x in MAPSIZE.x:
+		for y in MAPSIZE.y:
 			var a = noise.get_noise_2d(x,y) # a is a number from -1 to 1
 			a = (a+1)*0.5 # Makes a a number from 0 to 1
 			a = round(a*16+0.6)-1 # Makes a an integer from 0 to 15
