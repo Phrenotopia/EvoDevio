@@ -1,7 +1,7 @@
 extends Node2D
 
 var noise
-var map_size = Vector2(240, 135) #Vector2(119, 65) For 32x32 tiles
+var map_size = Vector2(1920, 1080) #Vector2(119, 65) For 32x32 tiles
 
 
 func _ready():
@@ -9,7 +9,7 @@ func _ready():
 	noise = OpenSimplexNoise.new()
 	noise.seed = 1
 	noise.octaves = 2 #My default is 2
-	noise.period = 32 #My default is 16
+	noise.period = 64 #My default is 16
 	noise.persistence = 0.25 #My default is 1
 	make_map()
 
