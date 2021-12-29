@@ -1,10 +1,11 @@
 extends Camera2D
 
+onready var world = get_node("/root/World")
 var speed = 20
 
 
 func _ready():
-	var StartingPoint = get_parent().MAPSIZE * get_parent().get_child(1).cell_size / 2 #Finds the middle of the map
+	var StartingPoint = world.MAPSIZE * world.PIXELSCALE / 2 #Finds the middle of the map
 	self.position = StartingPoint #Sets itself into the middle of the map
 
 

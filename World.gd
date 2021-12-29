@@ -2,8 +2,8 @@ extends Node2D
 
 const SCALE = 16
 const MAPSIZE = Vector2(16*SCALE, 9*SCALE) #Vector2(119, 65) For 32x32 tiles
-const PIXELSCALE = 8 #How big the ElevationMap tiles are in pixels
-const GRIDSIZE = 12*PIXELSCALE
+const PIXELSCALE = 8 #How big the ElevationMap tiles are in pixels / ElevationMap cell_size
+const GRIDSIZE = 16*PIXELSCALE
 
 func _ready():
 	$ElevationMap.make_map(MAPSIZE.x, MAPSIZE.y)
