@@ -6,7 +6,7 @@ const PIXELSCALE = 8 #How big the ElevationMap tiles are in pixels / ElevationMa
 const GRIDSIZE = 16*PIXELSCALE
 
 func _ready():
-	$ElevationMap.make_map(MAPSIZE.x, MAPSIZE.y)
+	$WorldMap.make_map(MAPSIZE.x, MAPSIZE.y)
 	$Grid._draw()
 
 
