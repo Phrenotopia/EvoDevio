@@ -10,8 +10,8 @@ func _draw():
 		
 	for i in columns:
 		if i != 0 :
-			draw_rect(Rect2(i*world.GRIDSIZE-1, 0, 2, world.MAPSIZE.y*8), COLOUR) #Draws every line in the columns
+			draw_rect(Rect2(i*world.GRIDSIZE-2, 0, 2, world.MAPSIZE.y*world.PIXELSCALE), COLOUR) #Draws every line in the columns
 	for i in rows:
 		if i != 0 :
-			draw_rect(Rect2(-1, i*world.GRIDSIZE, world.MAPSIZE.x*8, 2), COLOUR) #Draws every line in the rows
+			draw_rect(Rect2(-1, i*world.GRIDSIZE-1, world.MAPSIZE.x*world.PIXELSCALE, 2), COLOUR) #Draws every line in the rows
 
