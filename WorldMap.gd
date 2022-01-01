@@ -33,16 +33,16 @@ func make_map(w,h):
 			var e = noise.get_noise_2d(x,y) # e is a number from -1 to 1
 			e = (e+1)*0.5 # Makes e a number from 0 to 1
 			e = round(e*16+0.6)-1 # Makes e an integer from 0 to 15
-			# Creates localities
-			var t = Locality.new(x,y,e)
-			# TODO assign locality to sector
-			localities.append(t)
-			
-			# WIP
-			var s = sectors[ceil(y/16-1+x/16)] # Gets the right sector (Haven't tested, so might not work)
-			s.append_locality(t) # Assigns localities to the right sector
+			var t = Locality.new(x,y,e) # Create locality
+			#localities.append(t)
+			var s = sectors[ceil(y/16-1+x/16)] # Get locality's sector 
+			s.append_locality(t) # Assign locality to sector
 	
-
 func _draw():
-	for t in localities:
-			set_cell(t.x,t.y,t.elevation) # Makes a a color from 0 (Red) to 15 (Dark blue)
+	#for t in localities:
+	#		set_cell(t.x,t.y,t.elevation) # Makes a a color from 0 (Red) to 15 (Dark blue)
+	for s in sectors: 
+		for t in s.localities:
+				set_cell(t.x,t.y,t.elevation) # Makes a a color from 0 (Red) to 15 (Dark blue)
+		
+	
