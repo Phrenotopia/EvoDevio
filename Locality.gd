@@ -1,6 +1,6 @@
 extends Node
 
-class_name Tile
+class_name Locality #A tile in WorldMap
 
 var x : int
 var y : int
