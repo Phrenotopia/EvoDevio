@@ -35,8 +35,11 @@ func make_map(w,h):
 			e = round(e*16+0.6)-1 # Makes e an integer from 0 to 15
 			var t = Locality.new(x,y,e) # Create locality
 			#localities.append(t)
-			var s = sectors[ceil(y/16-1+x/16)] # Get locality's sector 
+			var s = sectors[ceil(y-1+x/16)] # Get locality's sector 
 			s.append_locality(t) # Assign locality to sector
+	
+	for f in sectors.size():
+		print("Sector" + str(f) + " contains " + str(sectors[f].localities.size()) + " localities")
 	
 func _draw():
 	#for t in localities:
